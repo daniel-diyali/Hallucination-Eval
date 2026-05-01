@@ -1,0 +1,33 @@
+# Floor-pinning (>=) instead of exact pins. Easier on a learning project,
+# and I can lock with `pip freeze > requirements.lock.txt` if a run ever
+# behaves weirdly and I need to reproduce it.
+
+# Core ML stack. Transformers pulls in tokenizers and huggingface-hub
+# transitively, so I don't list those.
+torch>=2.6
+transformers>=4.49
+
+# Data wrangling.
+pandas>=2.2
+
+# Model API SDKs. One per provider.
+anthropic>=0.49
+openai>=1.60
+# TODO: confirm the Gemini SDK name on first install. I think it's
+# google-genai (the new unified SDK), not google-generativeai (old).
+google-genai>=1.0
+
+# Env loading. Reads .env into os.environ so I don't hardcode keys.
+python-dotenv>=1.0
+
+# Progress bars during batched NLI inference. Worth it the first time
+# I see how slow non-batched inference is.
+tqdm>=4.66
+
+# Notebooks for exploration. The pipeline itself doesn't need these,
+# but the contract has 3 notebooks in build order.
+jupyter>=1.0
+matplotlib>=3.8
+
+# Tests.
+pytest>=8.0
