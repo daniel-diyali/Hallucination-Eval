@@ -1,0 +1,35 @@
+# Secrets. Never commit real API keys. .env.example is the template,
+# .env is the real thing and stays local.
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtualenvs
+venv/
+.venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Data: the full HaluEval-QA dump can be big. I'll commit a small
+# sample slice for repro but not the raw download.
+data/halueval_qa_raw.json
+data/*.zip
+
+# Model cache. HuggingFace will dump multi-GB checkpoints here if I
+# point HF_HOME at the repo. Keep them out of git.
+models/
+.cache/
