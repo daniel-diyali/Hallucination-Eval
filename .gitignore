@@ -2,6 +2,10 @@
 # .env is the real thing and stays local.
 .env
 
+# CLAUDE.md is the private working contract between me and Claude.
+# Stays local. I keep a backup outside the repo so I don't lose it.
+CLAUDE.md
+
 # Python
 __pycache__/
 *.py[cod]
